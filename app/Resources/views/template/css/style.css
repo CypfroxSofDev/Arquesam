@@ -1335,6 +1335,11 @@ contact h4 {
     padding-left: 60px;
 }
 
+#centrologo a:hover {
+    color:#fff;
+}
+
+
 #centrologo {
     width: 80%;
     font-size: 16px;
