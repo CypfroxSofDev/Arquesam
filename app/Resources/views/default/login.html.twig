@@ -1,0 +1,20 @@
+{% extends 'default/index.html.twig' %}
+{% block body %}
+  <form action="login_check" method="post">
+		
+    <h1>Bienvenido</h1>
+
+    {% if error %}
+      <div style="color:red">{{ error.message }}</div>
+    {% endif %}        
+    
+    <label for="username">Usuario:</label>
+    <input type="text" name="_username" value="{{ last_username }}" required/>
+  
+    <label for="password">Contraseña:</label>
+    <input type="password" name="_password" required/>
+  
+    <input type="submit" name="login" value="Ingresar"/> 
+   
+  </form>
+{% endblock %}
