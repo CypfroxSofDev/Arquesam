@@ -41,12 +41,12 @@ body a:hover{
   position:relative;
 }
 .banner1 {
-  min-height: 700px;
+  min-height: 800px;
   background: url(../images/banner.jpg)no-repeat 0px 0px;
   background-size: cover;
 }
 .banner2 {
-  min-height: 700px;
+  min-height: 800px;
   background: url(../images/banner1.jpg)no-repeat 0px -114px;
   background-size: cover;
 }
@@ -59,7 +59,7 @@ body a:hover{
 }
 .logo {
   padding: 1em 0;
-  background-color: #ffd001;
+  background-color: rgba(162, 207, 68, 0.81);
 }
 .logo a {
   display: block;
@@ -850,11 +850,11 @@ p.cnt-p {
 }
 @media(max-width:1280px){
 .banner1 {
-  min-height: 560px;
+  min-height: 660px;
   background-position: 0px 0px;
 }
 .banner2 {
-  min-height: 560px;
+  min-height: 660px;
 }
 .top-nav ul li {
   display: block;
