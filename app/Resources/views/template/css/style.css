@@ -471,13 +471,13 @@ ul.social-slide li i.mac{
 }
 /*--features--*/
 .features {
-  padding: 4em 0;
+  padding: 5px 0;
 }
 .features-info {
-  margin-top: 4em;
+  margin-top: 5px;
 }
 .features-grids {
-  padding:1em;
+  padding:3px;
 }
 .features-grids img{
 	width: 100%;
