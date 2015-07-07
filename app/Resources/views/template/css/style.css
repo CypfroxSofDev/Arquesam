@@ -59,7 +59,9 @@ body a:hover{
 }
 .logo {
   padding: 1em 0;
-  background-color: #ffd001;
+  background-color: #01FF04;
+  float: left;
+  width: 20%;
 }
 .logo a {
   display: block;
@@ -68,19 +70,20 @@ body a:hover{
   width:initial;
 }
 .top-nav {
-  padding: 1em 0;
+  padding: 0em 0;
 }
 .top-nav ul {
 	margin: 0;
 }
 .top-nav ul li{
 	display:block;
-	margin: 2.2em 0;
+	margin: 1.5em 0;
 }	
 .top-nav ul li a {
   color: #FFFFFF;
-  font-size: 1.5em;
+  font-size: 1.3em;
   display: block;
+  float: left;
 }
 /* Effect 1: Brackets */
 .cl-effect-1 a::before,
@@ -366,7 +369,7 @@ ul.social-slide li i.mac{
 }
 .about h4 {
   font-size: 2.5em;
-  color: #FFD001;
+  color: #01FF04;
   font-family: 'Marvel-Regular';
 }
 .about-grids p {
@@ -432,7 +435,7 @@ ul.social-slide li i.mac{
 }
 .srvc-img {
   display: inline-block;
-  border: 2px solid #FFD001;
+  border: 2px solid #01FF04;
   padding: 1.5em;
   border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -452,7 +455,7 @@ ul.social-slide li i.mac{
   font-family: 'Marvel-Regular';
 }
 .srvc-grids-info:hover .srvc-img{
-	border: 2px dotted #FFD001;
+	border: 2px dotted #01FF04;
 }
 /*--//service--*/
 .slid{
@@ -471,13 +474,13 @@ ul.social-slide li i.mac{
 }
 /*--features--*/
 .features {
-  padding: 5px 0;
+  padding: 4em 0;
 }
 .features-info {
-  margin-top: 5px;
+  margin-top: 4em;
 }
 .features-grids {
-  padding:3px;
+  padding:1em;
 }
 .features-grids img{
 	width: 100%;
@@ -631,7 +634,7 @@ figure.effect-bubba:hover p {
 }
 .team-bottom h4 {
   font-size: 1.5em;
-  color: #FFD001;
+  color: #01FF04;
   margin: .5em 0;
   font-family: 'Marvel-Regular';
 }
@@ -702,7 +705,7 @@ width:100%;
 }
 .contact h4 {
   font-size: 2.5em;
-  color: #FFD001;
+  color: #01FF04;
   font-family: 'Marvel-Regular';
   margin-bottom: 0.5em;
 }
@@ -779,9 +782,9 @@ p.cnt-p {
   -ms-transition: 0.5s all ease;
 }
 .contact-form input[type="submit"]:hover {
-  border: 1px solid #fed201;
+  border: 1px solid #01FF04;
   background-color: #fff;
-  color: #fed201;
+  color: #01FF04;
 }
 .contact-form-info:nth-child(1) {
   padding-left: 0;
@@ -797,7 +800,7 @@ p.cnt-p {
 /*--//contact--*/
 /*--footer--*/
 .footer {
-  background-color: #fed201;
+  background-color: #01FF04;
   padding: 2em 0;
   text-align: center;
 }
@@ -1328,20 +1331,3 @@ contact h4 {
 }
 }
 /*---- //responsive-design -----*/
-
-/*nuevo diseño*/
-
-#centrologo a {
-    padding-left: 60px;
-}
-
-#centrologo a:hover {
-    color:#fff;
-}
-
-
-#centrologo {
-    width: 80%;
-    font-size: 16px;
-    margin: 0px auto;
-}
