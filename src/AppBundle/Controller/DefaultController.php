@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\ExpressionLanguage\Expression;
 
-<<<<<<< HEAD
+
 class DefaultController extends Controller {
 
 	/**
@@ -58,15 +58,4 @@ class DefaultController extends Controller {
 	public function indexAdminAction() {
 		return new Response('<h1>Administrador</h1><a href="logout">Cerrar</a>');
 	}
-=======
-class DefaultController extends Controller
-{
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction()
-    {
-        return $this->render('default/index.html.twig');
-    }
->>>>>>> origin/test-style
 }
