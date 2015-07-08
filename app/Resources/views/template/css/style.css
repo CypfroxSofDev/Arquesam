@@ -35,12 +35,12 @@ body a:hover{
   position:relative;
 }
 .banner1 {
-  min-height: 800px;
-  background: url(../images/banner.jpg)no-repeat 0px 0px;
+  min-height: 750px;
+  background: url(../images/banner.jpg)no-repeat 0px -114px;
   background-size: cover;
 }
 .banner2 {
-  min-height: 800px;
+  min-height: 750px;
   background: url(../images/banner1.jpg)no-repeat 0px -114px;
   background-size: cover;
 }
