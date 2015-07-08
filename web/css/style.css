@@ -36,12 +36,12 @@ body a:hover{
 }
 .banner1 {
   min-height: 650px;
-  background: url(../images/banner.jpg)no-repeat 0px -114px;
+  background: url(../images/banner.png)no-repeat -20px 0px;
   background-size: cover;
 }
 .banner2 {
   min-height: 650px;
-  background: url(../images/banner1.jpg)no-repeat 0px -114px;
+  background: url(../images/banner1.png)no-repeat -20px 0px;
   background-size: cover;
 }
 .banner-text {
@@ -53,19 +53,16 @@ body a:hover{
 }
 .logo {
   padding: 3px 0;
-<<<<<<< HEAD
-  background-color: rgba(162, 207, 68, 0.81);
-=======
   background-color: rgba(162, 207, 68, 0.81);
   float: left;
   width: 20%;
->>>>>>> origin/style_feature
 }
 .logo a {
   display: block;
 }
 .logo a img {
-  width:initial;
+  width:200px;
+  height:45px;
 }
 .top-nav {
   padding: 0 0;
@@ -873,7 +870,8 @@ p.cnt-p {
   margin: 0 auto;
 }
 .logo a img {
-  width: 100%;
+  width: 200px;
+  height: 45px;
 }
 }
 @media(max-width:1024px){
