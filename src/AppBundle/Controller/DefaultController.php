@@ -56,6 +56,6 @@ class DefaultController extends Controller {
 	 * @Security("has_role('ROLE_ADMIN')")
 	 */
 	public function indexAdminAction() {
-		return new Response('<h1>Administrador</h1><a href="logout">Cerrar</a>');
+		return $this->render('default/index.html.twig');
 	}
 }

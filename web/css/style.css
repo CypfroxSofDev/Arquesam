@@ -839,6 +839,21 @@ p.cnt-p {
 	filter: alpha(opacity=0);
 }
 /*--//slider-up-arrow--*/
+/*--Form-Login--*/
+.login-form {
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: -200px;
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    transform: scale(.8);
+}
+/*--//form-login--*/
 /*---- responsive-design -----*/
 @media(max-width:1440px){
 .banner2 {
