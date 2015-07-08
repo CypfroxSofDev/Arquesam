@@ -51,7 +51,7 @@ body a:hover{
   background-size: cover;
 }
 .banner-text {
-  background-color: rgba(20, 185, 213, 0.71);
+  background-color: rgba(162, 207, 68, 0.91);
   width: 100%;
   text-align: center;
   position: fixed;
@@ -62,7 +62,7 @@ body a:hover{
 <<<<<<< HEAD
   background-color: rgba(162, 207, 68, 0.81);
 =======
-  background-color: #01FF04;
+  background-color: rgba(162, 207, 68, 0.81);
   float: left;
   width: 20%;
 >>>>>>> origin/style_feature
@@ -478,13 +478,13 @@ ul.social-slide li i.mac{
 }
 /*--features--*/
 .features {
-  padding: 4em 0;
+  padding: 5px 0;
 }
 .features-info {
-  margin-top: 4em;
+  margin-top: 5px;
 }
 .features-grids {
-  padding:1em;
+  padding:5px;
 }
 .features-grids img{
 	width: 100%;
@@ -508,6 +508,7 @@ ul.social-slide li i.mac{
 	text-align: center;
 	cursor: pointer;
 	width:100%;
+  height: 315px;
 }
 .features-grids figure img {
 	position: relative;
@@ -709,7 +710,7 @@ width:100%;
 }
 .contact h4 {
   font-size: 2.5em;
-  color: #01FF04;
+  color: rgba(162, 207, 68, 0.91);
   font-family: 'Marvel-Regular';
   margin-bottom: 0.5em;
 }
@@ -804,7 +805,7 @@ p.cnt-p {
 /*--//contact--*/
 /*--footer--*/
 .footer {
-  background-color: #01FF04;
+  background-color: rgba(162, 207, 68, 0.81);
   padding: 2em 0;
   text-align: center;
 }
