@@ -45,7 +45,7 @@ body a:hover{
   background-size: cover;
 }
 .banner-text {
-  background-color: rgba(162, 207, 68, 0.91);
+  background-color: rgba(0, 156, 219, 0.91);
   width: 100%;
   text-align: center;
   position: fixed;
@@ -53,7 +53,7 @@ body a:hover{
 }
 .logo {
   padding: 3px 0;
-  background-color: rgba(162, 207, 68, 0.81);
+  background-color: rgba(0, 156, 219, 0.91);
   float: left;
   width: 20%;
 }
