@@ -35,13 +35,13 @@ body a:hover{
   position:relative;
 }
 .banner1 {
-  min-height: 750px;
-  background: url(../images/banner.jpg)no-repeat 0px -114px;
+  min-height: 650px;
+  background: url(../images/banner.png)no-repeat -20px 0px;
   background-size: cover;
 }
 .banner2 {
-  min-height: 750px;
-  background: url(../images/banner1.jpg)no-repeat 0px -114px;
+  min-height: 650px;
+  background: url(../images/banner1.png)no-repeat -20px 0px;
   background-size: cover;
 }
 .banner-text {
@@ -52,30 +52,27 @@ body a:hover{
   z-index: 9;
 }
 .logo {
-  padding: 1em 0;
-<<<<<<< HEAD
-  background-color: rgba(162, 207, 68, 0.81);
-=======
+  padding: 3px 0;
   background-color: rgba(162, 207, 68, 0.81);
   float: left;
   width: 20%;
->>>>>>> origin/style_feature
 }
 .logo a {
   display: block;
 }
 .logo a img {
-  width:initial;
+  width:200px;
+  height:45px;
 }
 .top-nav {
-  padding: 0em 0;
+  padding: 0 0;
 }
 .top-nav ul {
 	margin: 0;
 }
 .top-nav ul li{
 	display:block;
-	margin: 1.5em 0;
+	margin: 13px 0;
 }	
 .top-nav ul li a {
   color: #FFFFFF;
@@ -472,13 +469,13 @@ ul.social-slide li i.mac{
 }
 /*--features--*/
 .features {
-  padding: 5px 0;
+  padding: 1px 0;
 }
 .features-info {
-  margin-top: 5px;
+  margin-top: 1px;
 }
 .features-grids {
-  padding:5px;
+  padding:1px;
 }
 .features-grids img{
 	width: 100%;
@@ -502,7 +499,7 @@ ul.social-slide li i.mac{
 	text-align: center;
 	cursor: pointer;
 	width:100%;
-  height: 315px;
+  height: 215px;
 }
 .features-grids figure img {
 	position: relative;
@@ -799,16 +796,16 @@ p.cnt-p {
 /*--//contact--*/
 /*--footer--*/
 .footer {
-  background-color: rgba(162, 207, 68, 0.81);
+  background-color: #fff;
   padding: 2em 0;
   text-align: center;
 }
 .footer p {
-  color: #fff;
+  color: #000;
   font-size: 1.2em;
 }
 .footer p a {
-  color: #fff;
+  color: #000;
 }
 .footer p a:hover{
   color: #14B9D5;
@@ -888,7 +885,8 @@ p.cnt-p {
   margin: 0 auto;
 }
 .logo a img {
-  width: 100%;
+  width: 200px;
+  height: 45px;
 }
 }
 @media(max-width:1024px){
