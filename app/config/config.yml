@@ -71,3 +71,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# Vich Uploader Configuration
+vich_uploader:
+    db_driver: orm # or mongodb or propel or phpcr
