@@ -36,13 +36,13 @@ body a:hover{
 }
 .banner1 {
   min-height: 650px;
-  background: url(../images/banner.png)no-repeat -20px 0px;
-  background-size: cover;
+  background: url(../images/banner.png)no-repeat 0px 0px;
+  background-size: 100%;
 }
 .banner2 {
   min-height: 650px;
-  background: url(../images/banner1.png)no-repeat -20px 0px;
-  background-size: cover;
+  background: url(../images/banner1.png)no-repeat 0px 0px;
+  background-size: 100%;
 }
 .banner-text {
   background-color: rgba(0, 156, 219, 0.91);
@@ -838,23 +838,31 @@ p.cnt-p {
 /*--//slider-up-arrow--*/
 /*---- responsive-design -----*/
 @media(max-width:1440px){
+  .banner1 {
+  background-position: 0px 32px;
+}
 .banner2 {
-  background-position: 0px -32px;
+  background-position: 0px 32px;
 }
 }
 @media(max-width:1366px){
+  .banner1 {
+  background-position: 0px 40px;
+}
 .banner2 {
-  background-position: 0px 0px;
+  background-position: 0px 40px;
 }
 }
 @media(max-width:1280px){
 .banner1 {
   min-height: 660px;
-  background-position: 0px 0px;
+  background-position: 0px 85px;
 }
 .banner2 {
   min-height: 660px;
+  background-position: 0px 85px;
 }
+
 .top-nav ul li {
   display: block;
   margin: 1.5em 0;
@@ -864,6 +872,7 @@ p.cnt-p {
 }
 .logo {
   padding: 2em 0;
+  width:100%;
 }
 .logo a {
   width: 65%;
@@ -877,9 +886,11 @@ p.cnt-p {
 @media(max-width:1024px){
 .banner1 {
   min-height: 510px;
+  background-position: 0px 120px;
 }
 .banner2 {
   min-height: 510px;
+  background-position: 0px 120px;
 }
 .logo a {
   width: 60%;
@@ -936,8 +947,14 @@ figure.effect-bubba figcaption::before, figure.effect-bubba figcaption::after {
 }
 }
 @media(max-width:768px){
-.banner-text {
-  width: 23%;
+.banner-text .logo {
+  width: 100%;
+}
+
+
+.logo a img {
+  width: 150px;
+  height: 40px;
 }
 .title h3 {
   font-size: 2.8em;
@@ -987,7 +1004,7 @@ figure.effect-bubba figcaption::before, figure.effect-bubba figcaption::after {
   margin-top: 2em;
 }
 .features-grids {
-  width: 33.33%;
+  width: 50%;
   float: left;
   padding: .5em;
 }
@@ -1046,6 +1063,11 @@ figure.effect-bubba p {
 .top-nav {
   padding:0;
 }
+
+.logo a img {
+  width: 100px;
+  height: 35px;
+}
 .top-nav ul li a {
   font-size: 1.2em;
 }
@@ -1096,8 +1118,14 @@ figure.effect-bubba p {
   padding: 3em 0;
   width: 100%;
 }
+
 .features {
   padding: 2em 0 0;
+}
+
+.features-grids {
+  width: 100%;
+  padding: .5em;
 }
 figure.effect-bubba h4 {
   padding-top: 7%;
@@ -1179,7 +1207,7 @@ figure.effect-bubba p {
   padding: 1.5em 0 0;
 }
 .features-grids {
-  width: 50%;
+  width: 100%;
 }
 figure.effect-bubba h4 {
   padding-top: 8%;
