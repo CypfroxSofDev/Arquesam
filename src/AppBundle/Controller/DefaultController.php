@@ -9,6 +9,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request; 
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\ExpressionLanguage\Expression;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use AppBundle\Entity\Product;
+use AppBundle\Form\ProductType;
 
 
 class DefaultController extends Controller {
@@ -56,6 +60,6 @@ class DefaultController extends Controller {
 	 * @Security("has_role('ROLE_ADMIN')")
 	 */
 	public function indexAdminAction() {
-		return $this->render('default/index.html.twig');
+		return $this->render('default/start.html.twig');
 	}
 }

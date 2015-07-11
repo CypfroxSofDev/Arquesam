@@ -1,0 +1,31 @@
+{% extends '::default/backend.html.twig' %}
+
+{% block showProduct %}
+    <h1 style="margin-left: 40px;">Listado de Productos</h1>
+<center>
+    <table style="background-color: white; color: black; margin-left: 40px;" class="table border bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Imagename</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr align="center">
+                <td><a href="{{ path('product_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>
+                <td>{{ entity.description }}</td>
+                <td style="margin: 20px">$ {{ entity.price|number_format(0, ',', '.') }} COP</td>
+                <td><img src="{{ vich_uploader_asset(entity, 'imageFile') }}" alt="{{ entity.name }}" width="50px" /></td>
+                <td>
+                    <button><a href="{{ path('product_edit', { 'id': entity.id }) }}">Editar</a></button>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</center>
+    {% endblock %}
