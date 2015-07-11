@@ -1,0 +1,32 @@
+{% extends '::default/backend.html.twig' %}
+
+{% block Start %}
+	<div class="tile-group double">
+    	<span class="tile-group-title">General</span>
+        <div class="tile-container"  onclick="showProductos()">
+            <div class="tile bg-green fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-shop"></span>
+                </div>
+                <span class="tile-label">Productos</span>
+            </div>    
+        </div>
+        <div class="charm right-side padding20 bg-white fg-black" id="charmProductos">
+	        <button class="square-button bg-transparent fg-black no-border place-right small-button" onclick="showProductos()"><span class="mif-cross"></span></button>
+	        <h1 class="text-light"><span class="icon mif-shop"> Productos</span></h1>
+	        <hr class="thin"/><br />
+	        <a href="{{ path('product') }}">
+		        <div style="margin-left: 40px" class="tile-container">
+		            <div class="tile bg-white fg-black" data-role="tile">
+		                <div class="tile-content iconic">
+		                    <span class="icon mif-list"></span>
+		                </div>
+		                <span style="margin-left: 40px" class="tile-label">Listado</span>
+		            </div>    
+	        	</div>
+        	</a>
+	    </div>
+	</div>
+
+{% endblock %}
+
