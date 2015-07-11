@@ -51,7 +51,14 @@ class DefaultController extends Controller {
         if($authChecker->isGranted('ROLE_ADMIN')){
         	return $this->redirect($requestUri.'backend');
         }else{
-        	return $this->render('default/index.html.twig');
+
+        	$em = $this->getDoctrine()->getManager();
+
+	        $entities = $em->getRepository('AppBundle:Product')->findAll();
+
+	        return $this->render('default/index.html.twig', array(
+	            'entities' => $entities,
+	        ));
         }
 	}
 
