@@ -146,6 +146,12 @@ body a:hover{
   text-align: center;
   width: 100%;
 }
+
+#break {
+  width:95%;
+  height:90%;
+  word-wrap:break-word;
+}
 .rslides_tabs li {
   display: inline;
   float: none;
@@ -507,9 +513,9 @@ ul.social-slide li i.mac{
 }
 
 .features-grids figure figcaption {
-	padding: 2em;
+	padding: 1em;
 	color: #fff;
-	font-size: 1.25em;
+	font-size: 1em;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-o-backface-visibility: hidden;
@@ -538,10 +544,10 @@ figure.effect-bubba:hover img {
 figure.effect-bubba figcaption::before,
 figure.effect-bubba figcaption::after {
 	position: absolute;
-	top: 30px;
-	right: 30px;
-	bottom: 30px;
-	left: 30px;
+	top: 5px;
+	right: 5px;
+	bottom: 5px;
+	left: 5px;
 	content: '';
 	opacity: 0;
 	-webkit-transition: opacity 0.35s,-webkit-transform 0.35s;	
@@ -572,7 +578,7 @@ figure.effect-bubba figcaption::after {
 }
 
 figure.effect-bubba h4 {
-	padding-top: 16%;
+	padding-top: 2%;
 	-webkit-transition: transform 0.35s;
 	-moz-transition: transform 0.35s;
 	-o-transition: -o-transform 0.35s;
@@ -925,13 +931,13 @@ p.cnt-p {
 }
 .features-grids figure figcaption {
   padding: 0.5em;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 figure.effect-bubba figcaption::before, figure.effect-bubba figcaption::after {
-  top: 20px;
-  right: 20px;
-  bottom: 20px;
-  left: 20px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
 }
 .features-grids h4 {
   font-size: 20px;
@@ -1027,10 +1033,10 @@ figure.effect-bubba figcaption::before, figure.effect-bubba figcaption::after {
   font-size: 17px;
 }
 figure.effect-bubba figcaption::before, figure.effect-bubba figcaption::after {
-  top: 10px;
-  right: 10px;
-  bottom: 10px;
-  left: 10px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
 }
 figure.effect-bubba p {
   padding: 20px 0.5em;
@@ -1143,7 +1149,7 @@ figure.effect-bubba p {
   padding: .5em;
 }
 figure.effect-bubba h4 {
-  padding-top: 7%;
+  padding-top: 2%;
 }
 figure.effect-bubba p {
   padding: 4px 0;
@@ -1225,7 +1231,7 @@ figure.effect-bubba p {
   width: 100%;
 }
 figure.effect-bubba h4 {
-  padding-top: 8%;
+  padding-top: 2%;
 }
 .features-grids figure figcaption {
   padding: .8em;
@@ -1339,7 +1345,7 @@ p.cnt-p {
   padding: 1em;
 }
 figure.effect-bubba h4 {
-  padding-top: 17%;
+  padding-top: 2%;
 }
 figure.effect-bubba p {
   padding: 18px 0;
@@ -1370,4 +1376,7 @@ contact h4 {
   height: 200px;
 }
 }
+
+
+
 /*---- //responsive-design -----*/
