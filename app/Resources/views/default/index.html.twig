@@ -40,14 +40,12 @@
 	<!--//End-slider-script -->
 	<div  id="top" class="callbacks_container">
 		<ul class="rslides" id="slider3">
+		{% for banner in banners %}
 			<li>					
-				<div class="banner2">						
+				<div style="background: url({{ vich_uploader_asset(banner, 'imageFile') }})no-repeat 0px 0px; background-size: cover" class="banner1">						
 				</div>
 			</li>
-			<li>					
-				<div class="banner1">						
-				</div>
-			</li>								
+		{%endfor%}								
 		</ul>
 	</div>
 </div>
@@ -55,15 +53,21 @@
 <!--products-->
 <div class="features" id="products">
 	<div class="container">	
+		<div class="title">
+		<br><br><br>
+			<h3>Productos y Servicios</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sem urna. Mauris in tincidunt ipsum, ac dictum lectus. Pellentesque commodo ante eget quam convallis ultricies.</p>
+		<br>
+		</div>
 		<div class="features-info">
-		{% for entity in entities %}
+		{% for product in products %}
 			<div class="col-md-4 features-grids wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
 				<figure class="effect-bubba">
-					<img src="{{ vich_uploader_asset(entity, 'imageFile') }}" alt="{{ entity.name }}" alt=""/>
+					<img src="{{ vich_uploader_asset(product, 'imageFile') }}" alt="{{ product.name }}" alt=""/>
 					<figcaption>
 						<div id="break">
-							<h4>{{ entity.name }}</h4>
-							<p>{{ entity.description }}<br>Costo: {{ entity.price }}</p>
+							<h4>{{ product.name }}</h4>
+							<p>{{ product.description }}<br>$ {{ product.price|number_format(0, ',', '.') }} COP</p>
 						</div>	
 					</figcaption>			
 				</figure>		
@@ -79,12 +83,12 @@
 	<div class="container">
 		<div class="title">
 			<h3>Contactenos</h3>
-			<p>Para una mayor informacion por favor rellene el campo de seguridad</p>
+			<p>Para una mayor informacion llene el formulario</p>
 		</div>
 		<div class="contact-grids">
 			<div class="col-md-4 address wow fadeInLeft animated" data-wow-delay="0.5s" style="visibility: visible; -webkit-animation-delay: 0.5s;">
 				<h4>Informacion de contacto</h4>
-				<p class="cnt-p">Esto te probee de la facilidad para comunicarte con nosotros</p>
+				<p class="cnt-p">Medios para comunicarnos con nosotros</p>
 				<p>Arquesam creativo</p>
 				<p>Calle las piedras</p>
 				<p>Telefono: +57317778718</p>

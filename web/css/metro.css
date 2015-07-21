@@ -10732,7 +10732,7 @@ input[type="submit"].link:active {
   height: 100%;
   position: relative;
   padding: 120px 80px 0 0;
-  overflow: hidden;
+  overflow: scroll;
 }
 .tile-area:before,
 .tile-area:after {

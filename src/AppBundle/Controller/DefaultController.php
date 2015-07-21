@@ -54,19 +54,22 @@ class DefaultController extends Controller {
 
         	$em = $this->getDoctrine()->getManager();
 
-	        $entities = $em->getRepository('AppBundle:Product')->findAll();
+	        $products = $em->getRepository('AppBundle:Product')->findAll();
+	        $banners = $em->getRepository('AppBundle:Banner')->findAll();
 
 	        return $this->render('default/index.html.twig', array(
-	            'entities' => $entities,
+	            'products' => $products,
+	            'banners' => $banners,
 	        ));
         }
 	}
 
 	/**
-	 * @Route("/backend")
+	 * @Route("/backend", name="backend")
 	 * @Security("has_role('ROLE_ADMIN')")
 	 */
 	public function indexAdminAction() {
 		return $this->render('default/start.html.twig');
 	}
+
 }

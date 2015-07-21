@@ -144,8 +144,8 @@
             }
         }
 
-        function showSettings(){
-            var  charm = $("#charmSettings");
+        function showBanners(){
+            var  charm = $("#charmBanners");
 
             if (charm.data('hidden') == undefined) {charm.data('hidden', true);}
 
@@ -214,22 +214,15 @@
 <div class="tile-area tile-area-scheme-dark fg-white">
     <h1 class="tile-area-title">Arquesam</h1>
     <div class="tile-area-controls">
-        <button class="image-button icon-right bg-transparent fg-white bg-hover-dark no-border"><span class="sub-header no-margin text-light">Administrador</span> <span class="icon mif-user"></span></button>
-        <button class="square-button bg-transparent fg-white bg-hover-dark no-border" onclick="showSettings()"><span class="mif-cog"></span></button>
+        <a href="{{ path('backend') }}" class="image-button icon-right bg-transparent fg-white bg-hover-dark no-border"><span class="sub-header no-margin text-light">Administrador</span><span class="icon mif-user"></span></a>
         <a href="{{ path('logout') }}" class="square-button bg-transparent fg-white bg-hover-dark no-border"><span class="mif-switch"></span></a>
     </div>
-
-    <div class="charm right-side padding20 bg-grayDark" id="charmSettings">
-        <button class="square-button bg-transparent fg-white no-border place-right small-button" onclick="showSettings()"><span class="mif-cross"></span></button>
-        <h1 class="text-light">Settings</h1>
-        <hr class="thin"/>
-        <br />
-        <div class="schemeButtons">
-
-        </div>
-    </div>
-	{% block Start %}{% endblock %}
+	{% block start       %}{% endblock %}
 	{% block showProduct %}{% endblock %}
+    {% block editProduct %}{% endblock %}
+    {% block showBanner  %}{% endblock %}
+    {% block newBanner   %}{% endblock %}
+    {% block editBanner  %}{% endblock %}
 </div>
 </body>
 </html>

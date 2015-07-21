@@ -1,0 +1,25 @@
+{% extends '::default/backend.html.twig' %}
+
+{% block newBanner -%}
+    
+    <a style="float : left; margin: 15px" class="button cycle-button mif-undo fg-black" href="{{ path('banner') }}"></a>
+    <h1>Añadir Banner</h1>
+    
+	    <div style="margin: auto; width : 80%" class="tile-container bg-transpatent">
+	    		    {{ form_errors(form) }}
+		<!--Editar objeto-->
+			<center>
+			    {{ form_start(form) }}
+				    <div class="tile-wide bg-transparent">
+					 	<div style="margin: 6.4% 20% 0%;" class="input-control file" data-role="input">
+					 		{{ form_label (form.imageFile) }}	    
+						    {{ form_widget(form.imageFile) }}
+						    {{ form_errors(form.imageFile) }}
+						    <button class="button"><span class="mif-folder-upload"></span></button>
+						</div>
+							{{ form_widget(form.submit, {'attr' : {'class':'button success'}}) }}	
+					</div>
+			    {{ form_end(form) }}
+			</center>
+		</div>
+{% endblock %}

@@ -7,21 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use AppBundle\Entity\Product;
-use AppBundle\Form\ProductType;
+use AppBundle\Entity\Banner;
+use AppBundle\Form\BannerType;
 
 /**
- * Product controller.
+ * Banner controller.
  *
- * @Route("/backend/product")
+ * @Route("/backend/banner")
  */
-class ProductController extends Controller
+class BannerController extends Controller
 {
 
     /**
-     * Lists all Product entities.
+     * Lists all Banner entities.
      *
-     * @Route("/", name="product")
+     * @Route("/", name="banner")
      * @Method("GET")
      * @Template()
      */
@@ -29,22 +29,22 @@ class ProductController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppBundle:Product')->findAll();
+        $entities = $em->getRepository('AppBundle:Banner')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new Product entity.
+     * Creates a new Banner entity.
      *
-     * @Route("/", name="product_create")
+     * @Route("/", name="banner_create")
      * @Method("POST")
-     * @Template("AppBundle:Product:new.html.twig")
+     * @Template("AppBundle:Banner:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Product();
+        $entity = new Banner();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -53,7 +53,7 @@ class ProductController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('product_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('banner'));
         }
 
         return array(
@@ -63,16 +63,16 @@ class ProductController extends Controller
     }
 
     /**
-     * Creates a form to create a Product entity.
+     * Creates a form to create a Banner entity.
      *
-     * @param Product $entity The entity
+     * @param Banner $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Product $entity)
+    private function createCreateForm(Banner $entity)
     {
-        $form = $this->createForm(new ProductType(), $entity, array(
-            'action' => $this->generateUrl('product_create'),
+        $form = $this->createForm(new BannerType(), $entity, array(
+            'action' => $this->generateUrl('banner_create'),
             'method' => 'POST',
         ));
 
@@ -82,15 +82,15 @@ class ProductController extends Controller
     }
 
     /**
-     * Displays a form to create a new Product entity.
+     * Displays a form to create a new Banner entity.
      *
-     * @Route("/new", name="product_new")
+     * @Route("/new", name="banner_new")
      * @Method("GET")
      * @Template()
      */
     public function newAction()
     {
-        $entity = new Product();
+        $entity = new Banner();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -100,34 +100,9 @@ class ProductController extends Controller
     }
 
     /**
-     * Finds and displays a Product entity.
+     * Displays a form to edit an existing Banner entity.
      *
-     * @Route("/{id}", name="product_show")
-     * @Method("GET")
-     * @Template()
-     */
-    public function showAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $em->getRepository('AppBundle:Product')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Product entity.');
-        }
-
-        $deleteForm = $this->createDeleteForm($id);
-
-        return array(
-            'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
-        );
-    }
-
-    /**
-     * Displays a form to edit an existing Product entity.
-     *
-     * @Route("/{id}/edit", name="product_edit")
+     * @Route("/{id}/edit", name="banner_edit")
      * @Method("GET")
      * @Template()
      */
@@ -135,10 +110,10 @@ class ProductController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Product')->find($id);
+        $entity = $em->getRepository('AppBundle:Banner')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Product entity.');
+            throw $this->createNotFoundException('Unable to find Banner entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -152,16 +127,16 @@ class ProductController extends Controller
     }
 
     /**
-    * Creates a form to edit a Product entity.
+    * Creates a form to edit a Banner entity.
     *
-    * @param Product $entity The entity
+    * @param Banner $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Product $entity)
+    private function createEditForm(Banner $entity)
     {
-        $form = $this->createForm(new ProductType(), $entity, array(
-            'action' => $this->generateUrl('product_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new BannerType(), $entity, array(
+            'action' => $this->generateUrl('banner_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -170,20 +145,20 @@ class ProductController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Product entity.
+     * Edits an existing Banner entity.
      *
-     * @Route("/{id}", name="product_update")
+     * @Route("/{id}", name="banner_update")
      * @Method("PUT")
-     * @Template("AppBundle:Product:edit.html.twig")
+     * @Template("AppBundle:Banner:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBundle:Product')->find($id);
+        $entity = $em->getRepository('AppBundle:Banner')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Product entity.');
+            throw $this->createNotFoundException('Unable to find Banner entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -193,7 +168,7 @@ class ProductController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('product_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('banner_edit', array('id' => $id)));
         }
 
         return array(
@@ -203,9 +178,9 @@ class ProductController extends Controller
         );
     }
     /**
-     * Deletes a Product entity.
+     * Deletes a Banner entity.
      *
-     * @Route("/{id}", name="product_delete")
+     * @Route("/{id}", name="banner_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
@@ -215,21 +190,21 @@ class ProductController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppBundle:Product')->find($id);
+            $entity = $em->getRepository('AppBundle:Banner')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Product entity.');
+                throw $this->createNotFoundException('Unable to find Banner entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('product'));
+        return $this->redirect($this->generateUrl('banner'));
     }
 
     /**
-     * Creates a form to delete a Product entity by id.
+     * Creates a form to delete a Banner entity by id.
      *
      * @param mixed $id The entity id
      *
@@ -238,7 +213,7 @@ class ProductController extends Controller
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('product_delete', array('id' => $id)))
+            ->setAction($this->generateUrl('banner_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
