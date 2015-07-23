@@ -79,7 +79,11 @@ swiftmailer:
 vich_uploader:
     db_driver: orm # or mongodb or propel or phpcr
 
-    mappings: 
+    mappings:
+        banner_image:
+            uri_prefix:          /images/banners 
+            upload_destination:  %kernel.root_dir%/../web/images/banners
+
         product_image: 
             uri_prefix:          /images/products 
             upload_destination:  %kernel.root_dir%/../web/images/products

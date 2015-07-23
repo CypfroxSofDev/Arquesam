@@ -94,7 +94,10 @@ class User implements UserInterface
      */
     public function setPassword($password)
     {
-        $this->password = $password;
+        
+        $encoderPassword = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+        
+        $this->password = $encoderPassword;
 
         return $this;
     }
