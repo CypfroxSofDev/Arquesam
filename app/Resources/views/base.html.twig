@@ -2,12 +2,70 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Arquesam Creativo{% endblock %}</title>
+        <link href="{{ asset('css/bootstrap.css') }}" type="text/css" rel="stylesheet" media="all">
+        <link href="{{ asset('css/style.css') }}" type="text/css" rel="stylesheet" media="all">
+
+    
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!-- js -->
+        <script src="{{ asset('js/modernizr.custom.js') }}"></script>
+        <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+        <!-- //js --> 
+        <!-- start-smoth-scrolling-->
+        <script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>  
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){     
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                });
+            });
+        </script>
+        <!--//end-smoth-scrolling-->
+        <!--animate-->
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css" media="all">
+        <script src="{{ asset('js/wow.min.js') }}"></script>
+            <script>
+                 new WOW().init();
+            </script>
+        <!--//end-animate-->
     </head>
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <!--footer-->
+        <div class="footer">
+            <div class="container">         
+                    <p class="wow bounceIn animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">© 2015 Arquesam creativo powered by <a href="http://www.cypfrox.com">Cypfrox Industries</a></p>
+                <div class="clearfix"> </div>
+            </div>  
+        </div>
+        <!--//footer-->
+        <!--smooth-scrolling-of-move-up-->
+        <script type="text/javascript">
+                $(document).ready(function() {
+                    /*
+                    var defaults = {
+                        containerID: 'toTop', // fading element id
+                        containerHoverID: 'toTopHover', // fading element hover id
+                        scrollSpeed: 1200,
+                        easingType: 'linear' 
+                    };
+                    */
+                    
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                    
+                });
+            </script>
+            <a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+        <!--//smooth-scrolling-of-move-up-->
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="{{ asset('js/bootstrap.js') }}"> </script>
     </body>
+
 </html>

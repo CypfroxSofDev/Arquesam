@@ -1,3 +1,14 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+    
+###########ACCESO USUARIO###############
+#cerrar sesion
+logout:
+    path: /logout
+#inicio sesion 
+login:
+    path: /login
+#confirmacion sesion 
+login_check:
+    path: /login_check

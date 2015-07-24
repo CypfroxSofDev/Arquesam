@@ -1,13 +1,50 @@
+# you can read more about security in the related section of the documentation
+# http://symfony.com/doc/current/book/security.html
 security:
+    # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
+    encoders:
+        AppBundle\Entity\User:
+            algorithm: bcrypt
+            cost:      12
+    # http://symfony.com/doc/current/book/security.html#hierarchical-roles
+    #role_hierarchy:
+    #    ROLE_COORD: ROLE_USER
+    #    ROLE_ADMIN: [ROLE_USER, ROLE_COORD]
 
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory:
-            memory: ~
+        user_db: 
+            entity: { class: AppBundle:User, property: username }
 
+    # the main part of the security, where you can set up firewalls
+    # for specific sections of your app
     firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
-            security: false
+           pattern:  ^/(_(profiler|wdt)|css|images|js)/
+           security: false
+        # the login page has to be accessible for everybody
+        # login:
+            # pattern:  ^/secured/login$
+            # security: false
 
-        main:
-            anonymous: ~
+        # Seguridad de los Instructores
+        secured_area: 
+            pattern:   ^/*
+            anonymous: true 
+            provider:  user_db
+            #http_basic: ~
+            form_login: 
+                check_path: login_check 
+                login_path: login
+                default_target_path: homepage
+            logout:
+                path:   /logout
+                target: / 
+
+    # with these settings you can restrict or allow access for different parts
+    # of your application based on roles, ip, host or methods
+    # http://symfony.com/doc/current/cookbook/security/access_control.html
+    access_control:
+        #- { path: ^/*,         roles: IS_AUTHENTICATED_ANONYMOUS }
+        - { path: ^/backend/*,    roles: ROLE_ADMIN }

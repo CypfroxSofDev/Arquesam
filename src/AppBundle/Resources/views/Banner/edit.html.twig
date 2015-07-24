@@ -1,0 +1,40 @@
+{% extends '::default/backend.html.twig' %}
+
+{% block editBanner -%}
+
+    <a style="float : left; margin: 15px" class="button cycle-button mif-undo fg-black" href="{{ path('banner') }}"></a>
+    <h1>Editar Banner</h1>
+
+    <div style="margin: auto; width : 80%" class="tile-container bg-transpatent">
+    		    {{ form_errors(edit_form) }}
+	<!--Editar objeto-->
+	    {{ form_start(edit_form) }}
+		    <div class="tile-large bg-transparent">
+			 	<div style="margin: 6.4% 20% 0%;" class="input-control file" data-role="input">
+			 		{{ form_label (edit_form.imageFile) }}	    
+				    {{ form_widget(edit_form.imageFile) }}
+				    {{ form_errors(edit_form.imageFile) }}
+				    <button class="button"><span class="mif-folder-upload"></span></button>
+				</div>
+				<hr>
+				<div class="image-container">
+	                <div class="frame">
+						<img src="{{ vich_uploader_asset(entity, 'imageFile') }}" />
+					</div>
+				</div>
+			</div>
+		    
+			{{ form_widget(edit_form.submit, {'attr' : {'class':'button success', 'style':' margin-left:5%'}}) }}	    
+			
+	    {{ form_end(edit_form) }}
+	<!--//Editar objeto-->
+
+	<!--Eliminar objeto-->	
+		{{ form_start(delete_form) }}
+	
+			{{ form_widget(delete_form.submit, {'label' : 'Eliminar' , 'attr' : { 'class' : 'button danger' , 'style':'margin-left:5%'}}) }}
+
+		{{ form_end(delete_form) }}
+	<!--//Eliminar objeto-->	
+   	</div>   
+{% endblock %}

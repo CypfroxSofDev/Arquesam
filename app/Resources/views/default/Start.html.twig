@@ -1,0 +1,66 @@
+{% extends '::default/backend.html.twig' %}
+
+{% block start %}
+	<div class="tile-group double">
+    	<span class="tile-group-title">General</span>
+        <div class="tile-container"  onclick="showProductos()">
+            <div class="tile bg-green fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-shop"></span>
+                </div>
+                <span class="tile-label">Productos</span>
+            </div>    
+        </div>
+        <div class="charm right-side padding20 bg-grayDark fg-green" id="charmProductos">
+	        <button class="square-button bg-transparent fg-white no-border place-right small-button" onclick="showProductos()"><span class="mif-cross"></span></button>
+	        <h1 class="text-light"><span class="icon mif-shop fg-white"></span> Productos</h1>
+	        <hr class="thin"/><br />
+	        <a href="{{ path('product') }}">
+		        <div style="margin-left: 40px" class="tile-container">
+		            <div class="tile bg-green fg-white" data-role="tile">
+		                <div class="tile-content iconic">
+		                    <span class="icon mif-list"></span>
+		                </div>
+		                <span style="margin-left: 40px" class="tile-label">Listado</span>
+		            </div>    
+	        	</div>
+        	</a>
+	    </div>
+
+	    <div class="tile-container"  onclick="showBanners()">
+            <div class="tile bg-blue fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-images"></span>
+                </div>
+                <span class="tile-label">Banners</span>
+            </div>    
+        </div>
+        <div class="charm right-side padding20 bg-grayDark fg-blue" id="charmBanners">
+	        <button class="square-button bg-transparent fg-white no-border place-right small-button" onclick="showBanners()"><span class="mif-cross"></span></button>
+	        <h1 class="text-light"><span class="icon mif-images fg-white"></span> Banners</h1>
+	        <hr class="thin"/><br />
+	        <a href="{{ path('banner') }}">
+		        <div style="margin-left: 40px" class="tile-container">
+		            <div class="tile bg-blue fg-white" data-role="tile">
+		                <div class="tile-content iconic">
+		                    <span class="icon mif-list"></span>
+		                </div>
+		                <span style="margin-left: 40px" class="tile-label">Listado</span>
+		            </div>    
+	        	</div>
+        	</a>
+        	<a href="{{ path('banner_new') }}">
+		        <div style="margin-left: 40px" class="tile-container">
+		            <div class="tile bg-blue fg-white" data-role="tile">
+		                <div class="tile-content iconic">
+		                    <span class="icon mif-plus"></span>
+		                </div>
+		                <span style="margin-left: 35px" class="tile-label">Añadir</span>
+		            </div>    
+	        	</div>
+        	</a>
+	    </div>
+	</div>
+
+{% endblock %}
+

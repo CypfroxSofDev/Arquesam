@@ -1,0 +1,64 @@
+{% extends '::default/backend.html.twig' %}
+
+{% block editProduct %}
+	
+	<a style="float : left; margin: 15px" class="button cycle-button mif-undo fg-black" href="{{ path('product') }}"></a>
+    <h1>Editar Producto</h1>
+
+    <div style="margin: auto; width : 80%" class="tile-container bg-transpatent">
+    		    {{ form_errors(edit_form) }}
+	<!--Editar objeto-->
+	    {{ form_start(edit_form) }}
+		    <div class="tile-large bg-transparent">
+			 	<div style="margin: 6.4% 20% 0%;" class="input-control file" data-role="input">
+			 		{{ form_label (edit_form.imageFile) }}	    
+				    {{ form_widget(edit_form.imageFile) }}
+				    {{ form_errors(edit_form.imageFile) }}
+				    <button class="button"><span class="mif-folder-upload"></span></button>
+				</div>
+				<hr>
+				<div class="image-container">
+	                <div class="frame">
+						<img src="{{ vich_uploader_asset(entity, 'imageFile') }}" alt="{{ entity.name }}" />
+					</div>
+				</div>
+			</div>
+		    <div class="tile-wide bg-transparent">
+			    <div style="margin: 20%" class="input-control text">
+				    {{ form_label (edit_form.name) }}
+				    {{ form_widget(edit_form.name) }}
+				    {{ form_errors(edit_form.name) }}
+				</div>
+			</div>
+			<div class="tile-wide bg-transparent">
+				<div style="margin: 20%" class="input-control text">
+				    {{ form_label (edit_form.price) }}
+				    {{ form_widget(edit_form.price, {'type':'number', 'value': entity.price }) }}
+				    {{ form_errors(edit_form.price) }}
+				</div>
+			</div>
+			<div class="tile-wide bg-transparent">
+				<div style="margin: 8% 7% 5%;" class="input-control text">
+				    {{ form_label (edit_form.description) }}
+				    {{ form_widget(edit_form.description, {'attr' : {'style' : 'width: 270px' }}) }}
+				    {{ form_errors(edit_form.description) }}
+				</div>
+			</div>	
+	</div>
+	<hr class="thin" style="margin-left: 5% ">
+			{{ form_widget(edit_form.submit, {'value':'<span></span>', 'attr' : {'class':'button success', 'style':'float: left; margin-left:5%'}}) }}	    
+			
+	    {{ form_end(edit_form) }}
+	<!--//Editar objeto-->
+
+	<!--Eliminar objeto-->	
+		{{ form_start(delete_form) }}
+	
+			{{ form_widget(delete_form.submit, {'label' : 'Eliminar' , 'attr' : { 'class' : 'button danger' , 'style':'float: right;'}}) }}
+
+		{{ form_end(delete_form) }}
+	<!--//Eliminar objeto-->	
+   	</div>   
+	
+
+{% endblock %}

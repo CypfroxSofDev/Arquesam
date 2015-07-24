@@ -1,0 +1,33 @@
+{% extends '::default/backend.html.twig' %}
+
+{% block showBanner -%}
+
+    <h1>Listado de Banners</h1>
+    <div style="margin-left: 5%" class="tile-container bg-transparent">
+        <a href="{{ path('banner_new') }}">
+            <div class="tile bg-transparent fg-white" data-role="tile">
+                <div class="tile-content iconic">
+                    <span class="icon mif-plus"></span>
+                </div>
+                <span style="margin-left: 35px" class="tile-label">Añadir</span>
+            </div>    
+        </a>
+        {% for entity in entities %}
+        <a href="{{ path('banner_edit', { 'id': entity.id }) }}">
+            <div class="tile-square bg-orange fg-white" data-role="tile">
+                <div class="tile-content">
+                    <div class="image-container">
+                        <div class="frame">
+                            <img src="{{ vich_uploader_asset(entity, 'imageFile') }}">
+                        </div>
+                        <div class="image-overlay op-black">
+                            <h2>Editar</h2>
+                            <p>Haz click para cambiar la imagen</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
